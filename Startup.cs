@@ -1,3 +1,5 @@
+using DotNetCodeChallenge.Infra;
+using DotNetCodeChallenge.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +39,8 @@ namespace DotNetCodeChallenge
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddSwaggerHowTo();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +63,12 @@ namespace DotNetCodeChallenge
             app.UsePathBase("/api");
             app.UseRouting();
             app.UseCors();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(opt => {
+                opt.SwaggerEndpoint("/swagger/v1/swagger.json", "How to Use Products API");
+            });
+            app.UseMiddleware<GlobalExceptionHandler>();
 
             app.UseAuthorization();
 
