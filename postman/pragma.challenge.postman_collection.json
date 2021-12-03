@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "c11296d1-09ca-41f1-ab02-78328101ac20",
+		"name": "pragma.challenge",
+		"description": "Collections com retornos simulados do backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Beers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pragma.local}}/Products",
+					"host": [
+						"{{pragma.local}}"
+					],
+					"path": [
+						"Products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sensor Temperature",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://temperature-sensor-service.herokuapp.com/sensor/1",
+					"protocol": "https",
+					"host": [
+						"temperature-sensor-service",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sensor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pragma.local}}/Products/1",
+					"host": [
+						"{{pragma.local}}"
+					],
+					"path": [
+						"Products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
