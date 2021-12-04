@@ -1,4 +1,5 @@
 ﻿using System;
+using DotNetCodeChallenge.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -16,6 +17,13 @@ namespace DotNetCodeChallenge.Infra
                 });
             });
 
+            return services;
+        }
+
+        public static IServiceCollection AddScopes(this IServiceCollection services)
+        {
+            services.AddScoped<ICheckBeerStatusService, CheckBeerStatusService>();
+            services.AddScoped<IGetSensorTemperatureService, GetSensorTemperatureService>();
             return services;
         }
     }

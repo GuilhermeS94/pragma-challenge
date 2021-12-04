@@ -26,12 +26,18 @@
     <None Remove="Middlewares\" />
     <None Remove="CustomExceptions\" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Services\" />
+    <None Remove="Constants\" />
+    <None Remove="Repo\" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Infra\" />
     <Folder Include="Middlewares\" />
     <Folder Include="CustomExceptions\" />
+    <Folder Include="Services\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Repo\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

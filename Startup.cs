@@ -1,5 +1,6 @@
 using DotNetCodeChallenge.Infra;
 using DotNetCodeChallenge.Middlewares;
+using DotNetCodeChallenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,6 +41,7 @@ namespace DotNetCodeChallenge
                 configuration.RootPath = "ClientApp/build";
             });
 
+            services.AddScopes();
             services.AddSwaggerHowTo();
         }
 
