@@ -14,6 +14,17 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +40,15 @@
     <None Remove="Services\" />
     <None Remove="Constants\" />
     <None Remove="Repo\" />
+    <None Remove="Tests\" />
+    <None Remove="NUnit" />
+    <None Remove="NUnit3TestAdapter" />
+    <None Remove="Microsoft.NET.Test.Sdk" />
+    <None Remove="xunit" />
+    <None Remove="coverlet.collector" />
+    <None Remove="xunit.runner.visualstudio" />
+    <None Remove="Moq" />
+    <None Remove="Microsoft.TestPlatform.TestHost" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +58,7 @@
     <Folder Include="Services\" />
     <Folder Include="Constants\" />
     <Folder Include="Repo\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

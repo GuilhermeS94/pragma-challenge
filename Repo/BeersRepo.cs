@@ -4,7 +4,7 @@ using DotNetCodeChallenge.Models;
 
 namespace DotNetCodeChallenge.Repo
 {
-    public class BeersRepo
+    public class BeersRepo : IBeersRepo
     {
         private readonly List<Beer> beers = new()
         {

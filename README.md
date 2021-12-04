@@ -18,4 +18,6 @@ This project uses
     <li>Add Swagger for API documentation. Framework SwashBuckle.AspNetCore for auto generating.</li>
     <li>Add Middleware and model for global exception and return object pattern for front.</li>
     <li>Adding NewtonSoft.Json for property name and objects serializations.</li>
+    <li>Adding Scoped Interfaces with classes with singles and easy understanding functions.</li>
+    <li>Adding unit tests, dotnet test command, or generating report dotnet test --collect="XPlat Code Coverage"</li>
 </ol>
