@@ -16,14 +16,7 @@ namespace DotNetCodeChallenge.Tests
         public BeersRepoTest()
         {
             _dbMock = new Mock<IBeersRepo>();
-        }
-
-        [Fact]
-        public void ShouldListAllBeers()
-        {
-            _dbMock
-            .Setup(item => item.ListAll())
-            .Returns(new List<Beer>()
+            _beers = new List<Beer>()
                 {
                     new Beer
                     {
@@ -32,7 +25,6 @@ namespace DotNetCodeChallenge.Tests
                         MinimumTemperature = 4,
                         MaximumTemperature = 6,
                         Temperature = 0,
-                        TemperatureStatus = "",
                     },
 
                     new Beer
@@ -41,8 +33,7 @@ namespace DotNetCodeChallenge.Tests
                         Name = "IPA",
                         MinimumTemperature = 5,
                         MaximumTemperature = 6,
-                        Temperature = 0,
-                        TemperatureStatus = "",
+                        Temperature = 0
                     },
 
                     new Beer
@@ -51,8 +42,7 @@ namespace DotNetCodeChallenge.Tests
                         Name = "Lager",
                         MinimumTemperature = 4,
                         MaximumTemperature = 7,
-                        Temperature = 0,
-                        TemperatureStatus = "",
+                        Temperature = 0
                     },
 
                     new Beer
@@ -61,8 +51,7 @@ namespace DotNetCodeChallenge.Tests
                         Name = "Stout",
                         MinimumTemperature = 6,
                         MaximumTemperature = 8,
-                        Temperature = 0,
-                        TemperatureStatus = "",
+                        Temperature = 0
                     },
 
                     new Beer
@@ -71,8 +60,7 @@ namespace DotNetCodeChallenge.Tests
                         Name = "Wheat beer",
                         MinimumTemperature = 3,
                         MaximumTemperature = 5,
-                        Temperature = 0,
-                        TemperatureStatus = "",
+                        Temperature = 0
                     },
 
                     new Beer
@@ -81,11 +69,17 @@ namespace DotNetCodeChallenge.Tests
                         Name = "Pale Ale",
                         MinimumTemperature = 4,
                         MaximumTemperature = 6,
-                        Temperature = 0,
-                        TemperatureStatus = "",
+                        Temperature = 0
                     }
-                }
-            );
+                };
+        }
+
+        [Fact]
+        public void ShouldListAllBeers()
+        {
+            _dbMock
+            .Setup(item => item.ListAll())
+            .Returns(_beers);
             _db = _dbMock.Object;
 
             List<Beer> beers = _db.ListAll();
@@ -97,19 +91,10 @@ namespace DotNetCodeChallenge.Tests
         public void ShouldGetOneBeerById()
         {
             _dbMock
-            .Setup(item => item.GetById("3"))
-            .Returns(new Beer
-                    {
-                        Id = "3",
-                        Name = "Lager",
-                        MinimumTemperature = 4,
-                        MaximumTemperature = 7,
-                        Temperature = 0,
-                        TemperatureStatus = "",
-                    }
-            );
+            .Setup(item => item.GetById("1"))
+            .Returns(_beers[0]);
             _db = _dbMock.Object;
-            Beer beer = _db.GetById("3");
+            Beer beer = _db.GetById("1");
             Assert.NotNull(beer);
         }
     }

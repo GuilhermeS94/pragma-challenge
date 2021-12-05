@@ -14,8 +14,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "Pilsner",
                 MinimumTemperature = 4,
                 MaximumTemperature = 6,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             },
 
             new Beer
@@ -24,8 +23,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "IPA",
                 MinimumTemperature = 5,
                 MaximumTemperature = 6,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             },
 
             new Beer
@@ -34,8 +32,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "Lager",
                 MinimumTemperature = 4,
                 MaximumTemperature = 7,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             },
 
             new Beer
@@ -44,8 +41,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "Stout",
                 MinimumTemperature = 6,
                 MaximumTemperature = 8,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             },
 
             new Beer
@@ -54,8 +50,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "Wheat beer",
                 MinimumTemperature = 3,
                 MaximumTemperature = 5,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             },
 
             new Beer
@@ -64,8 +59,7 @@ namespace DotNetCodeChallenge.Repo
                 Name = "Pale Ale",
                 MinimumTemperature = 4,
                 MaximumTemperature = 6,
-                Temperature = 0,
-                TemperatureStatus = "",
+                Temperature = 0
             }
         };
         public BeersRepo()

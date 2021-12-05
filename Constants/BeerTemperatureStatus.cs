@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DotNetCodeChallenge.Constants
 {
-    public class TemperatureStatus
+    public class BeerTemperatureStatus
     {
         public const string TOO_HIGH = "too high";
         public const string TOO_LOW = "too low";

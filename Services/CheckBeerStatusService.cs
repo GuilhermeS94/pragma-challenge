@@ -24,21 +24,7 @@ namespace DotNetCodeChallenge.Services
             Sensor sensor = await _sensorService.Execute(beerId);
 
             beer.Temperature = sensor.Temperature;
-
-            if (sensor.Temperature < beer.MinimumTemperature)
-            {
-                beer.TemperatureStatus = TemperatureStatus.TOO_LOW;
-            }
-
-            if (sensor.Temperature > beer.MaximumTemperature)
-            {
-                beer.TemperatureStatus = TemperatureStatus.TOO_HIGH;
-            }
-
-            if (sensor.Temperature >= beer.MinimumTemperature && sensor.Temperature <= beer.MaximumTemperature)
-            {
-                beer.TemperatureStatus = TemperatureStatus.ALL_GOOD;
-            }
+            beer.UpdateTemperatureStatus();
 
             return beer;
         }
