@@ -22,16 +22,20 @@ This project uses
     <li>Adding Scoped Interfaces with classes with singles and easy understanding functions.</li>
     <li>Adding unit tests, `dotnet test` command</li>
     <li>Adding unit tests, for services, refactor of execute method from CheckBeerStatusService.</li>
+    <li>Fix: ReadMe, added the arch services explained on Failures area, hotfix with Microsoft.TestPlatform.TestHost because there an error with with no web test host dll, and this nuget solved.</li>
 </ol>
 
-### IF I have time...
+### What I would like to do?
 <ul>
     <li>Create a react hook architecture for requests, beacuse the front should use more than one api, and I like to call them separetly, but following a pattern.</li>
     <li>Create a react hook to call de backend Products, using the previous architecture.</li>
     <li>Refactor about set status when I get the current temperature from sensor, I didnt like the method.</li>
     <li>Create tests for the controller and the new front components.</li>
     <li>Create a method, logic and tests for update a single status beer each time, when it have to update, like there is some time to the beer lose degrees, and the range between de min and max are different, so it means that could have different moments to check sensor.</li>
-<ul>
+</ul>
+
+### Tests
+I created the tests think on front integration, what it have to receive, and the data that should be there, so when I did the refactor, I tested the final result, that must be the same, the rules with sensor temperature, a beer object to build the HTML, and expecting and error.
 
 ### Failures
 I tried to create the component in front to make the request calls, but Im not succeeded about typescript samples and make it work with javascript ClientApp.
